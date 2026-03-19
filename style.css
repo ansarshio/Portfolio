@@ -1,13 +1,15 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: white;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e2e8f0;
 }
 
 /* Sidebar */
@@ -23,6 +25,7 @@ body {
   flex-direction: column;
   gap: 20px;
   transition: 0.3s;
+  z-index: 1000;
 }
 
 .sidebar.active {
@@ -30,10 +33,17 @@ body {
 }
 
 .sidebar a {
-  color: white;
-  text-decoration: none;
   display: flex;
   gap: 10px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #38bdf8;
+  transform: translateX(5px);
 }
 
 /* Header */
@@ -44,47 +54,105 @@ header {
   padding: 15px 8%;
 }
 
+/* Menu Button */
 #menuBtn {
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: #e2e8f0;
+  cursor: pointer;
 }
 
-/* Images */
+/* Profile Image */
 .profile-img {
   width: 45px;
   height: 45px;
+  object-fit: cover;
   border-radius: 50%;
-}
-
-.hero-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  border: 2px solid #38bdf8;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+}
+
+.hero-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top; /* ⭐ top visible fix */
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  color: #94a3b8;
 }
 
 /* Sections */
 section {
-  padding: 50px 8%;
+  padding: 60px 8%;
 }
 
-/* Cards */
+/* Titles */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-left: 4px solid #38bdf8;
+  padding-left: 10px;
+}
+
+/* Cards (Responsive Grid) */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
 }
 
 .card {
-  background: #1e293b;
+  background: rgba(30, 41, 59, 0.7);
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Contact */
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin: 8px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .card {
+    font-size: 13px;
+  }
 }
