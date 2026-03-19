@@ -1,0 +1,15 @@
+body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: white; }
+
+header { display: flex; justify-content: space-between; padding: 20px; background: #020617; position: sticky; top: 0; }
+
+nav a { margin: 0 10px; color: white; text-decoration: none; }
+
+.hero { text-align: center; padding: 100px 20px; }
+
+.cards { display: flex; gap: 20px; padding: 20px; flex-wrap: wrap; }
+
+.card { background: #1e293b; padding: 20px; border-radius: 10px; flex: 1 1 200px; transition: 0.3s; }
+
+.card:hover { transform: scale(1.05); }
+
+section { padding: 50px 20px; }
