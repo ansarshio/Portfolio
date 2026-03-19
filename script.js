@@ -2,18 +2,18 @@ const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 // Toggle sidebar
-menuBtn.addEventListener("click", () => {
+menuBtn.onclick = () => {
   sidebar.classList.toggle("active");
-});
+};
 
-// Close when clicking any link
+// Close when click link
 document.querySelectorAll(".sidebar a").forEach(link => {
-  link.addEventListener("click", () => {
+  link.onclick = () => {
     sidebar.classList.remove("active");
-  });
+  };
 });
 
-// Close on right click anywhere
+// Close on right click
 document.addEventListener("contextmenu", () => {
   sidebar.classList.remove("active");
 });
